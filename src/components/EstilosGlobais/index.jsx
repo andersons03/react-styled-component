@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const EstilosGlobais = createGlobalStyle`
+  *{
+    box-sizing: border-box;
+  }
+  
   html {
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
