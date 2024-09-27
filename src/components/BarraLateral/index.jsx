@@ -8,7 +8,7 @@ const ListaEstilizada = styled.ul`
   width: 212px;
   display: flex;
   flex-direction: column;
-  gap: 29px;
+  gap: 30px;
 `;
 
 const BarraLateral = () => {
