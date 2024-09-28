@@ -11,9 +11,14 @@ const ListaEstilizada = styled.ul`
   gap: 30px;
 `;
 
+const AsideEstilizado = styled.aside`
+  position: sticky;
+  top: 0;
+`;
+
 const BarraLateral = () => {
   return(
-    <aside>
+    <AsideEstilizado>
       <nav>
         <ListaEstilizada>
           <ItemNavegacao iconeAtivo={"/icones/home-ativo.png"} iconeInativo={"/icones/home-inativo.png"} ativo={true}>
@@ -33,7 +38,7 @@ const BarraLateral = () => {
           </ItemNavegacao>
         </ListaEstilizada>
       </nav>
-    </aside>
+    </AsideEstilizado>
   )
 }
 
