@@ -1,12 +1,14 @@
 import imagemBanner from "./assets/banner.png";
+import fotos from "./fotos.json";
 
 import styled from "styled-components"
 import EstilosGlobais from "./components/EstilosGlobais"
-import Botao from "./components/Botao"
 import Cabecalho from "./components/Cabecalho";
 import BarraLateral from "./components/BarraLateral";
 import Banner from "./components/Banner";
 import Galeria from "./components/Galeria";
+import { useState } from "react";
+import ModalZoom from "./components/ModalZoom";
 
 
 const FundoGradient = styled.div`
@@ -32,7 +34,8 @@ const ConteudoPagina = styled.div`
   flex: 1;
 `
 
-function App() {
+const App = () => {
+  const [fotosGaleria, setFotosGaleria] = useState(fotos);
   return (
     <FundoGradient>
       <EstilosGlobais />
@@ -42,10 +45,11 @@ function App() {
           <BarraLateral />
           <ConteudoPagina>
             <Banner titulo={"A galeria mais completa de fotos do espaço!"} imagemFundo={imagemBanner} />
-            <Galeria />
+            <Galeria fotosGaleria={fotos} />
           </ConteudoPagina>
         </MainContainer>
       </AppContainer>
+      <ModalZoom />
     </FundoGradient>
   )
 }
