@@ -5,7 +5,6 @@ const ListaEstilizada = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 212px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -14,6 +13,7 @@ const ListaEstilizada = styled.ul`
 const AsideEstilizado = styled.aside`
   position: sticky;
   top: 0;
+  width: 212px;
 `;
 
 const BarraLateral = () => {
