@@ -23,9 +23,8 @@ const ImagensContainer = styled.div`
   }
 `;
 
-const Galeria = ({fotosGaleria}) => {
-  console.log(fotosGaleria);
-  
+const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
+
   return(
     <>
       <Tags />
@@ -33,7 +32,11 @@ const Galeria = ({fotosGaleria}) => {
         <GaleriPrincipal>
           <Titulo>Navegue pela galeria</Titulo>
           <ImagensContainer>
-            {fotosGaleria.map((foto) => <Imagem informacoes={foto} key={foto.id} />)}
+            {fotos.map(foto => <Imagem 
+                aoZoomSolicitado={aoFotoSelecionada}
+                key={foto.id} 
+                foto={foto} />)
+            }
           </ImagensContainer>
         </GaleriPrincipal>
         <Populares />

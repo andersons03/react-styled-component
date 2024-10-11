@@ -36,6 +36,8 @@ const ConteudoPagina = styled.div`
 
 const App = () => {
   const [fotosGaleria, setFotosGaleria] = useState(fotos);
+  const [fotoSelecionada, setFotoSelecionada] = useState(null)
+
   return (
     <FundoGradient>
       <EstilosGlobais />
@@ -45,7 +47,7 @@ const App = () => {
           <BarraLateral />
           <ConteudoPagina>
             <Banner titulo={"A galeria mais completa de fotos do espaço!"} imagemFundo={imagemBanner} />
-            <Galeria fotosGaleria={fotos} />
+            <Galeria aoFotoSelecionada={foto => setFotoSelecionada(foto)} fotos={fotosGaleria} />
           </ConteudoPagina>
         </MainContainer>
       </AppContainer>
