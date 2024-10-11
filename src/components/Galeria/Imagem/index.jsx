@@ -42,18 +42,21 @@ const FigureEstilziado = styled.figure`
   }
 `;
 
-const Imagem = ({informacoes, expandida}) => {
+const Imagem = ({foto, expandida = false, aoZoomSolicitado, aoAlternarFavorito}) => {
+
+  const iconeFavorito = foto.favorita ? '/icones/favorito-ativo.png' : '/icones/favorito.png';
+
   return (
     <FigureEstilziado $expandida={expandida}>
-      <img src={informacoes.path} alt={informacoes.alt} />
+      <img src={foto.path} alt={foto.alt} />
       <figcaption>
-        <h3>{informacoes.titulo}</h3>
+        <h3>{foto.titulo}</h3>
         <footer>
-          <h4>{informacoes.fonte}</h4>
-          <BotaoIcone>
-            <img src="/icones/favorito.png" alt="Icone botão favorito" />
+          <h4>{foto.fonte}</h4>
+          <BotaoIcone onClick={() => aoAlternarFavorito(foto)}>
+            <img src={iconeFavorito} alt="Icone botão favorito" />
           </BotaoIcone>
-          {!expandida && <BotaoIcone aria-hidden={expandida}>
+          {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
               <img src="/icones/expandir.png" alt="Icone de expandir" />
           </BotaoIcone>}
         </footer>

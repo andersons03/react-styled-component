@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Titulo from "../Titulo";
 import Tags from "./Tags";
 import Populares from "./Populares";
-import Imagem from "./Imgem";
+import Imagem from "./Imagem";
 
 const GaleriaContainer = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const ImagensContainer = styled.div`
   }
 `;
 
-const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada , aoAlternarFavorito }) => {
 
   return(
     <>
@@ -34,6 +34,7 @@ const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
           <ImagensContainer>
             {fotos.map(foto => <Imagem 
                 aoZoomSolicitado={aoFotoSelecionada}
+                aoAlternarFavorito={aoAlternarFavorito}
                 key={foto.id} 
                 foto={foto} />)
             }
